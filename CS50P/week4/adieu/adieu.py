@@ -4,11 +4,11 @@ import sys
 def main():
     gather_names()
 
-# make a loop that keeps asking user for names until ctrl-d is pressed
-
 
 def gather_names():
     greetings = []
+    
+    # make a loop that keeps asking user for names until ctrl-d is pressed
     while True:
         try:
             name = input("Name: ")

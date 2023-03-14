@@ -1,0 +1,4 @@
+[
+  "test_plates.py::test_is_valid",
+  "test_plates.py::test_valid"
+]

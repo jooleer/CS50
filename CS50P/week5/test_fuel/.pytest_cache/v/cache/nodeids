@@ -1,0 +1,5 @@
+[
+  "test_fuel.py::test_convert",
+  "test_fuel.py::test_fuel",
+  "test_fuel.py::test_gauge"
+]

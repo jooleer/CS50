@@ -1,5 +1,4 @@
-from validator_collection import email
-import sys
+from validator_collection import email, errors
 
 
 def main():
@@ -8,14 +7,13 @@ def main():
 
 def validate_email(e):
     # check input with email validator
-    check = email(e)
-
-    if check:
+    try:
+        email(e)
         print("Valid")
-        sys.exit()
-    else:
+
+    # invalid email
+    except errors.InvalidEmailError:
         print("Invalid")
-        sys.exit()
 
 
 if __name__ == "__main__":

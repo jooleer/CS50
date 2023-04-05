@@ -34,7 +34,7 @@ class Jar:
 
     def withdraw(self, n):
         # check if removing cookies will go below 0
-        if self.size - n < 0 or n > self.size:
+        if n > self.size:
             raise ValueError
 
         # remove withraw amount from size

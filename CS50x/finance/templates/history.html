@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Trading History
+{% endblock %}
+
+{% block main %}
+
+<h3>Trading history</h3>
+<hr>
+
+<!-- check if there is any purchase data in row_buy -->
+{% if row_buy is defined and row_buy|length > 0 %}
+<h4>Purchase history</h4>
+<table class="center" border="1" align="center">
+    <tr>
+        <th>
+            Date
+        </th>
+        <th>
+            Company Symbol
+        </th>
+        <th>
+            Shares
+        </th>
+        <th>
+            Buy price/share
+        </th>
+        <th>
+            Purchase value
+        </th>
+    </tr>
+
+    {% for row in row_buy %}
+
+    <tr>
+        <td>
+            {{ row.date }}
+        </td>
+        <td>
+            {{ row.symbol }}
+        </td>
+        <td>
+            {{ row.shares }}
+        </td>
+        <td>
+            ${{ row.share_price|round(2) }}
+        </td>
+        <td>
+            ${{ row.purchase_value|round(2) }}
+        </td>
+        <td>
+
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<br />
+{% else %}
+<b>There were no purchases made yet on your account.</b>
+{% endif %}
+
+<!-- check if there are any stocks that have been sold in row_sell -->
+{% if row_sell is defined and row_sell|length > 0 %}
+<h4>Sell history</h4>
+
+<table class="center" border="1" align="center">
+    <tr>
+        <th>
+            Date
+        </th>
+        <th>
+            Company Symbol
+        </th>
+        <th>
+            Shares
+        </th>
+        <th>
+            Buy price/share
+        </th>
+        <th>
+            Purchase value
+        </th>
+    </tr>
+
+    {% for row in row_sell %}
+
+    <tr>
+        <td>
+            {{ row.date }}
+        </td>
+        <td>
+            {{ row.symbol }}
+        </td>
+        <td>
+            {{ row.shares }}
+        </td>
+        <td>
+            ${{ row.share_price|round(2) }}
+        </td>
+        <td>
+            ${{ row.sale_value|round(2) }}
+        </td>
+        <td>
+
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<br />
+
+{% else %}
+<b>There is no history of stocks being sold on your account.</b>
+{% endif %}
+
+{% endblock %}

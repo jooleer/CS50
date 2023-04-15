@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+
+        //....
+
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <h3>What is the name of the red color in the Harvard logo?</h3>
+            <p id="answer_feedback"></p>
+            <button onclick="answerFeedbackWrong()">Harvard Carmine</button>
+            <button onclick="answerFeedbackRight()">Harvard Crimson</button>
+            <button onclick="answerFeedbackWrong()">Harvard Cardinal</button>
+
+            <script>
+                function answerFeedbackRight() {
+                    document.getElementById("answer_feedback").innerHTML = "<font color='green'>Correct!</font>";
+                }
+                function answerFeedbackWrong() {
+                    document.getElementById("answer_feedback").innerHTML = "<font color='red'>Incorrect.</font>";
+                }
+
+            </script>
+
+            <!-- TODO: Add multiple choice question here -->
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <p id="name_feedback"></p>
+            <h3>What is the full name of the person that Harvard was named after?</h3>
+            <form id="question_name" name="question_name">
+                <input autocomplete="off" autofocus id="name_answer" name="name_answer" type="text">
+                <button type="button" onclick="nameCheck()">Check Answer</button>
+            </form>
+
+            <script>
+                function nameCheck() {
+                    var name = "John Harvard";
+                    var name_input = document.getElementById("name_answer").value;
+                    if (name == name_input) {
+                        document.getElementById("name_feedback").innerHTML = "<font color='green'>Correct!</font>";
+                    } else {
+                        document.getElementById("name_feedback").innerHTML = "<font color='red'>Incorrect.</font>";
+                    }
+                }
+            </script>
+            <!-- TODO: Add free response question here -->
+        </div>
+    </div>
+</body>
+
+</html>
